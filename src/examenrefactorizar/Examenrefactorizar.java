@@ -1,5 +1,7 @@
 package examenrefactorizar;
 
+import java.util.Scanner;
+
 /**
  *
  * @author julianlinux
@@ -12,6 +14,8 @@ public class Examenrefactorizar {
         {
             int digitos = 3;
             int ndigitos = 0;
+            digitos=introducir();
+            
             if (digitos <= 0) {
                 System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
             }
@@ -62,8 +66,17 @@ public class Examenrefactorizar {
                 }
             }
         }
-
     }
-}
-    
 
+    public static int introducir() {
+        Scanner obx = new Scanner(System.in);
+        System.out.println("Ingrese un digitp correcto (mayor que 0): ");
+        int nDigitos = obx.nextInt();
+        while (nDigitos <= 0) {
+            System.out.println("Ingrese un digitp correcto (mayor que 0): ");
+            nDigitos = obx.nextInt();
+        }
+        return nDigitos;
+    }
+
+}
